@@ -1,7 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Table } from 'react-bootstrap';
-import Enteries from './components/Enteries';
+import { Enteries } from './Enteries';
 const Output = () => {
     return ( 
         <div>

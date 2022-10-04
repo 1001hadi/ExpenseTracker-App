@@ -1,45 +1,9 @@
-import { useState } from 'react'
-import { nanoid } from 'nanoid';
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button,Container, Card, Form, Row, Col } from 'react-bootstrap';
-const Enteries = () => {
-    // const [addType, setAddType] = useState ("Select Type of Your Peyment");
-    // const [addDate, setAddDate] = useState ("");
-    // const [addTitle, setAddTitle] = useState ("");
-    // const [addAmount, setAddAmount] = useState ("");
-    const [expenses, setExpenses] = useState([]);
-    const [expenseData, setExpenseData] = useState({
-      type: "",
-      name: '',
-      date: '',
-      amount: ''
-    });
 
-    const handleFormChange = (e) => {
-      e.preventDefault();
-      const fieldName = e.target.getAttribute("name");
-      const fieldValue = e.target.value;
-
-      const newExpenseData = { ...expenseData };
-      newExpenseData[fieldName] = fieldValue;
-
-      setExpenseData(newExpenseData);
-    }
-
-    const submitHandler = (e) => {
-        e.preventDefault();
-        const expenseTitles = {
-          id: nanoid(),
-          type: expenseData.type,
-          name: expenseData.name,
-          data: expenseData.data,
-          amount: expenseData.amount
-         
-        }
-
-        setExpenses( ...expenses, expenseTitles);
-    }
-
+const Enteries = ({handleFormChange, submitHandler}) => {
+ 
     return ( 
         <div>
             <Container className='mt-5'>
