@@ -1,8 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Table } from 'react-bootstrap';
-import { Enteries } from './Enteries';
-const Output = () => {
+const Output = ({ expenses}) => {
     return ( 
         <div>
             <Container className='table mt-5'>

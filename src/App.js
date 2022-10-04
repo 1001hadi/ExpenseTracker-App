@@ -43,7 +43,7 @@ function App() {
   return (
     <div className="App">
       <Enteries handleFormChange={handleFormChange} submitHandler={submitHandler}/>
-      <Output/>
+      <Output submitHandler={submitHandler} expenses={expenses} setExpenses={setExpenses}/>
     </div>
   );
 }
