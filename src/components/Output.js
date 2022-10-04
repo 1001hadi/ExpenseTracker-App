@@ -1,10 +1,13 @@
+import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Table } from 'react-bootstrap';
+import Enteries from './components/Enteries';
 const Output = () => {
     return ( 
         <div>
             <Container className='table mt-5'>
-              <Table >
+                <h3>Expenses</h3>
+              <Table responsive="md" striped bordered hover size="sm">
                 <thead>
                     <tr>
                         <th>Type</th>
@@ -14,12 +17,15 @@ const Output = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Food</td>
-                        <td>Costco</td>
-                        <td>9/28/2022</td>
-                        <td>$124.73</td>
-                    </tr>
+                    {expenses.map((expense,index) => {
+                        return(
+                     <tr key={ index }>
+                         <td>{ expense.type }</td>
+                         <td>{ expense.name }</td>
+                         <td>{ expense.date }</td>
+                         <td>{ expense.amount }</td>
+                     </tr>
+                    )})}
                 </tbody>
               </Table>
             </Container>
