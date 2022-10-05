@@ -1,7 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Table } from 'react-bootstrap';
-const Output = ({ expenses}) => {
+const Output = ({ expenses, handleDelete}) => {
     return ( 
         <div>
             <Container className='table mt-5'>
@@ -13,17 +13,24 @@ const Output = ({ expenses}) => {
                         <th>Name</th>
                         <th>Date</th>
                         <th>Amount</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     {expenses.map((expense,index) => {
                         return(
-                     <tr key={ index }>
-                         <td>{ expense.type }</td>
-                         <td>{ expense.name }</td>
-                         <td>{ expense.date }</td>
-                         <td>{ expense.amount }</td>
-                     </tr>
+                        <tr key={ index }>
+                            <td>{ expense.type === 1 ? 'Cash' : 'Card' }</td>
+                            <td>{ expense.name }</td>
+                            <td>{ expense.date }</td>
+                            <td>{ expense.amount }</td>
+                            <td>
+                                <button className="btn btn-outline-danger"
+                                onClick={() => handleDelete(expense.id)}>
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
                     )})}
                 </tbody>
               </Table>

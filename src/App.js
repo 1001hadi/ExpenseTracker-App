@@ -1,15 +1,14 @@
 
-import {useState} from 'react';
+import {React, useState} from 'react';
 import './App.css';
 import Enteries from './components/Enteries';
 import Output from './components/Output';
 import { nanoid } from 'nanoid';
 
-
 function App() {
   const [expenses, setExpenses] = useState([]);
     const [expenseData, setExpenseData] = useState({
-      type: "",
+      type: '',
       name: '',
       date: '',
       amount: ''
@@ -25,25 +24,31 @@ function App() {
 
       setExpenseData(newExpenseData);
     }
-
+    
     const submitHandler = (e) => {
         e.preventDefault();
-        const expenseTitles = {
-          id: nanoid(),
-          type: expenseData.type,
-          name: expenseData.name,
-          data: expenseData.data,
-          amount: expenseData.amount
-         
-        }
 
-        setExpenses( ...expenses, expenseTitles);
+        setExpenses( expenses => {
+          return [expenses, {
+            id: nanoid(),
+            type: expenseData.type,
+            name: expenseData.name,
+            data: expenseData.data,
+            amount: expenseData.amount
+          }]
+        })
+       
+    }
+    
+    const handleDelete = (id) => {
+      const removeItem = expenses.filter(expense => expense.id !== id);
+      setExpenses(removeItem);
     }
 
   return (
     <div className="App">
       <Enteries handleFormChange={handleFormChange} submitHandler={submitHandler}/>
-      <Output submitHandler={submitHandler} expenses={expenses} setExpenses={setExpenses}/>
+      <Output handleDelete={handleDelete} expenses={expenses}/>
     </div>
   );
 }
