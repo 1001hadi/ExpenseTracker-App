@@ -28,12 +28,12 @@ function App() {
     const submitHandler = (e) => {
         e.preventDefault();
 
-        setExpenses( expenses => {
-          return [expenses, {
+        setExpenses(expenses => {
+          return [...expenses, {
             id: nanoid(),
             type: expenseData.type,
             name: expenseData.name,
-            data: expenseData.data,
+            date: expenseData.date,
             amount: expenseData.amount
           }]
         })
