@@ -1,5 +1,5 @@
 
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import './App.css';
 import Enteries from './components/Enteries';
 import Output from './components/Output';
@@ -7,12 +7,21 @@ import { nanoid } from 'nanoid';
 
 function App() {
   const [expenses, setExpenses] = useState([]);
-    const [expenseData, setExpenseData] = useState({
+  const [expenseData, setExpenseData, ] = useState({
       type: '',
       name: '',
       date: '',
       amount: ''
-    });
+  }
+  );
+  useEffect(()=> {
+      const localExpenses = localStorage.getItem('expenseData');
+      return localExpenses ? setExpenses(JSON.parse(localExpenses)) : [];
+    },[])
+  
+  useEffect(() => {
+    localStorage.setItem('expenseData', JSON.stringify(expenses));
+  },[expenses])
 
     const handleFormChange = (e) => {
       e.preventDefault();
@@ -27,7 +36,7 @@ function App() {
     
     const submitHandler = (e) => {
         e.preventDefault();
-
+       
         setExpenses(expenses => {
           return [...expenses, {
             id: nanoid(),
@@ -37,12 +46,10 @@ function App() {
             amount: expenseData.amount
           }]
         })
-       
     }
     
     const handleDelete = (id) => {
-      const removeItem = expenses.filter(expense => expense.id !== id);
-      setExpenses(removeItem);
+      setExpenses(expenses.filter(expense => expense.id !== id));
     }
 
   return (

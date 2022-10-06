@@ -9,8 +9,8 @@ const Output = ({ expenses, handleDelete}) => {
               <Table responsive="md" striped bordered hover size="sm">
                 <thead>
                     <tr>
-                        <th>Type</th>
-                        <th>Name</th>
+                        <th>Peyment</th>
+                        <th>Location / Vendor</th>
                         <th>Date</th>
                         <th>Amount</th>
                         <th>Action</th>
@@ -20,7 +20,7 @@ const Output = ({ expenses, handleDelete}) => {
                     {expenses.map((expense,index) => {
                         return(
                         <tr key={ index }>
-                            <td>{ expense.type === 1 ? 'Cash' : 'Card' }</td>
+                            <td>{ expense.type }</td>
                             <td>{ expense.name }</td>
                             <td>{ expense.date }</td>
                             <td>{ expense.amount }</td>
