@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button,Container, Card, Form, Row, Col } from 'react-bootstrap';
 
-const Enteries = ({handleFormChange, submitHandler}) => {
+const Enteries = ({handleFormChange, submitHandler, expenseData}) => {
  
     return ( 
         <div>
@@ -16,6 +16,7 @@ const Enteries = ({handleFormChange, submitHandler}) => {
                           <Form.Label>Peyment Type</Form.Label>
                           <Form.Select 
                             name='type'
+                            value={expenseData.type}
                             required 
                             onChange={handleFormChange}>
                             <option>Select Type of Your Peyment</option>
@@ -25,6 +26,7 @@ const Enteries = ({handleFormChange, submitHandler}) => {
                           <Form.Label className='mt-2' >Date</Form.Label>
                           <Form.Control type='date' 
                             name='date' 
+                            value={expenseData.date}
                             required
                             onChange={handleFormChange}/>
                          </Col>
@@ -32,12 +34,14 @@ const Enteries = ({handleFormChange, submitHandler}) => {
                           <Form.Label>Location / Vendor</Form.Label>
                           <Form.Control type='text'
                             name='name'
+                            value={expenseData.name}
                             required
                             placeholder='Where & What did you bougth?'
                             onChange={handleFormChange} />
                           <Form.Label  className='mt-2'>Amount</Form.Label>
                           <Form.Control type='number'
                             name='amount' 
+                            value={expenseData.amount}
                             required 
                             placeholder='$0.00 ?'
                             onChange={handleFormChange}/>

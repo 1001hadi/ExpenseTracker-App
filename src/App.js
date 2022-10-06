@@ -12,7 +12,7 @@ function App() {
       name: '',
       date: '',
       amount: ''
-  }
+   }
   );
  
   useEffect(() => {
@@ -46,7 +46,13 @@ function App() {
             date: expenseData.date,
             amount: expenseData.amount
           }]
-        })
+        });
+        setExpenseData({
+          type: '',
+          name: '',
+          date: '',
+          amount: ''
+        });
     }
     
     const handleDelete = (id) => {
@@ -55,7 +61,7 @@ function App() {
 
   return (
     <div className="App">
-      <Enteries handleFormChange={handleFormChange} submitHandler={submitHandler}/>
+      <Enteries handleFormChange={handleFormChange} submitHandler={submitHandler} expenseData={expenseData}/>
       <Output handleDelete={handleDelete} expenses={expenses}/>
     </div>
   );

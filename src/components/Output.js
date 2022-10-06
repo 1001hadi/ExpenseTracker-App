@@ -9,7 +9,7 @@ const Output = ({ expenses, handleDelete}) => {
               <Table responsive="md" striped bordered hover size="sm">
                 <thead>
                     <tr>
-                        <th>Peyment</th>
+                        <th>Peyment Type</th>
                         <th>Location / Vendor</th>
                         <th>Date</th>
                         <th>Amount</th>
