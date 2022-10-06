@@ -1,5 +1,5 @@
 
-import {React, useState, useEffect} from 'react';
+import {React, useState, useEffect, useRef} from 'react';
 import './App.css';
 import Enteries from './components/Enteries';
 import Output from './components/Output';
@@ -14,14 +14,20 @@ function App() {
       amount: ''
    }
   );
+
+  const isMounted = useRef(false);
  
   useEffect(() => {
-    localStorage.setItem('expenseData', JSON.stringify(expenses));
+    if(isMounted.current === true) {
+      localStorage.setItem('expenseData', JSON.stringify(expenses));
+    } else {
+      isMounted.current = true;
+    }
   },[expenses])
 
   useEffect(()=> {
-    const localExpenses = localStorage.getItem('expenseData');
-    return localExpenses ? setExpenses(JSON.parse(localExpenses)) : [];
+    const storageExpenses = JSON.parse(localStorage.getItem('expenseData')) || [];
+     setExpenses(storageExpenses);
   },[])
 
     const handleFormChange = (e) => {
@@ -37,7 +43,6 @@ function App() {
     
     const submitHandler = (e) => {
         e.preventDefault();
-       
         setExpenses(expenses => {
           return [...expenses, {
             id: nanoid(),
@@ -47,6 +52,7 @@ function App() {
             amount: expenseData.amount
           }]
         });
+        
         setExpenseData({
           type: '',
           name: '',

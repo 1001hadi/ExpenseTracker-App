@@ -1,7 +1,14 @@
+* {
+  background: #edf2f4;
+}
 .App {
   text-align: center;
 }
 
 h3 {
   margin: 20px;
+}
+
+div card-body {
+ background-color: #003554;
 }
