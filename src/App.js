@@ -14,14 +14,15 @@ function App() {
       amount: ''
   }
   );
-  useEffect(()=> {
-      const localExpenses = localStorage.getItem('expenseData');
-      return localExpenses ? setExpenses(JSON.parse(localExpenses)) : [];
-    },[])
-  
+ 
   useEffect(() => {
     localStorage.setItem('expenseData', JSON.stringify(expenses));
   },[expenses])
+
+  useEffect(()=> {
+    const localExpenses = localStorage.getItem('expenseData');
+    return localExpenses ? setExpenses(JSON.parse(localExpenses)) : [];
+  },[])
 
     const handleFormChange = (e) => {
       e.preventDefault();
