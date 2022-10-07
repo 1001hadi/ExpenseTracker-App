@@ -18,7 +18,7 @@ const Enteries = ({handleFormChange, submitHandler, expenseData}) => {
                               value={expenseData.type}
                               required 
                               onChange={handleFormChange}>
-                              <option>Select Type of Your Peyment</option>
+                              <option></option>
                               <option value="Cash">Cash</option>
                               <option value="Card">Card</option>
                             </Form.Select>
@@ -35,7 +35,7 @@ const Enteries = ({handleFormChange, submitHandler, expenseData}) => {
                                 name='name'
                                 value={expenseData.name}
                                 required
-                                placeholder='Where & What did you bougth?'
+                                placeholder='Where or What did you bougth?'
                                 onChange={handleFormChange} />
                                 <Form.Label  className='mt-2'>Amount</Form.Label>
                                 <Form.Control type='number'
