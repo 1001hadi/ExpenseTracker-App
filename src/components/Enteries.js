@@ -46,7 +46,7 @@ const Enteries = ({handleFormChange, submitHandler, expenseData}) => {
                                   onChange={handleFormChange}/>
                          </Col>
                        </Row>
-                        <Button className='mt-3' type='submit' onClick={submitHandler}>Add Your Expense</Button>
+                        <Button className='mt-3' type='submit'>Add Your Expense</Button>
                     </Form>
                 </Card.Body>
               </Card>

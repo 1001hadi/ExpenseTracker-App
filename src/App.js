@@ -43,6 +43,7 @@ function App() {
     
     const submitHandler = (e) => {
         e.preventDefault();
+        
         setExpenses(expenses => {
           return [...expenses, {
             id: nanoid(),
