@@ -1,4 +1,4 @@
-ExpenseTracker App
+#ExpenseTracker App
 
 You can keep tracking all of your expenses super easy.
 
