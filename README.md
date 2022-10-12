@@ -1,4 +1,4 @@
-## ExpenseTracker App
+# ExpenseTracker App
 
 Users can keep tracking all of their expenses super easy with this handy app and have it ready on any device users want. 
 
@@ -18,4 +18,4 @@ User expenses are adematicley saved in his/her device storage and the user can h
 
 This app has created as my 1st react.js project for SDMMP, I enjoyed the way I learned and improved my react.js skill with this challenging project.
 
-# Author: Hadi Jafari
+### Author: Hadi Jafari
