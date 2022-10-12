@@ -1,4 +1,4 @@
-# ExpenseTracker App
+# Expense Tracker App
 
 Users can keep tracking all of their expenses super easy with this handy app and have it ready on any device users want. 
 
