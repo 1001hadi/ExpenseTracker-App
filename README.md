@@ -1,8 +1,9 @@
-# Getting Started with Create React App
+ExpenseTracker App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You can keep tracking all of your expenses super easy.
 
-## Available Scripts
+You can try it here :https://expenses1001.herokuapp.com/
+
 
 In the project directory, you can run:
 
