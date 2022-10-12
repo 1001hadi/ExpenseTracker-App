@@ -1,6 +1,6 @@
 ## ExpenseTracker App
 
-You can keep tracking all of your expenses super easy with this handy app and have it on any device you have. 
+Users can keep tracking all of their expenses super easy with this handy app and have it ready on any device users want. 
 
 Try it here :https://expenses1001.herokuapp.com/
 ##
@@ -10,3 +10,12 @@ Try it here :https://expenses1001.herokuapp.com/
 It is super responsive and users can easily use it on any device.
 
 ![expense final mobile](https://user-images.githubusercontent.com/62669085/195422319-5aafea92-c404-4638-b034-91db64c9059d.jpg)
+
+
+User expenses are adematicley saved in his/her device storage and the user can have access to the data in any device. Users also can delete the unwanted data from any device. 
+
+## Project information
+
+This app has created as my 1st react.js project for SDMMP, I enjoyed the way I learned and improved my react.js skill with this challenging project.
+
+##Author: Hadi Jafari
