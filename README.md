@@ -12,7 +12,7 @@ It is super responsive and users can easily use it on any device.
 ![expense final mobile](https://user-images.githubusercontent.com/62669085/195422319-5aafea92-c404-4638-b034-91db64c9059d.jpg)
 
 
-User expenses are adematicley saved in his/her device storage and the user can have access to the data in any device. Users also can delete the unwanted data from any device. 
+User expenses are automatically saved in his/her device storage and the user can have access to the data in any device. Users also can delete the unwanted data from any device. 
 
 ## Project information
 
