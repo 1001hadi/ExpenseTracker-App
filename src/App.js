@@ -32,11 +32,8 @@ function App() {
 
     const handleFormChange = (e) => {
       e.preventDefault();
-      const fieldName = e.target.getAttribute("name");
-      const fieldValue = e.target.value;
-
-      const newExpenseData = { ...expenseData };
-      newExpenseData[fieldName] = fieldValue;
+      
+      const newExpenseData = { ...expenseData, [e.target.name]: e.target.value};
 
       setExpenseData(newExpenseData);
     }

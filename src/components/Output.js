@@ -9,7 +9,7 @@ const Output = ({ expenses, handleDelete}) => {
               <Table responsive="md" striped bordered hover size="sm">
                 <thead>
                     <tr>
-                        <th>Peyment Type</th>
+                        <th>Payment Type</th>
                         <th>Location / Vendor</th>
                         <th>Date</th>
                         <th>Amount</th>
@@ -23,11 +23,11 @@ const Output = ({ expenses, handleDelete}) => {
                             <td>{ expense.type }</td>
                             <td>{ expense.name }</td>
                             <td>{ expense.date }</td>
-                            <td>{ expense.amount }</td>
+                            <td>${ expense.amount }</td>
                             <td>
                                 <button className="btn btn-outline-danger"
-                                onClick={() => handleDelete(expense.id)}>
-                                    Delete
+                                  onClick={() => handleDelete(expense.id)}>
+                                  Delete
                                 </button>
                             </td>
                         </tr>

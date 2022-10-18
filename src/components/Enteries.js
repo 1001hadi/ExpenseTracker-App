@@ -12,7 +12,7 @@ const Enteries = ({handleFormChange, submitHandler, expenseData}) => {
                     <Form className='form' onSubmit={submitHandler}>
                         <Row>
                          <Col md>
-                           <Form.Label>Peyment Type</Form.Label>
+                           <Form.Label>Payment Type</Form.Label>
                             <Form.Select 
                               name='type'
                               value={expenseData.type}
@@ -35,7 +35,7 @@ const Enteries = ({handleFormChange, submitHandler, expenseData}) => {
                                 name='name'
                                 value={expenseData.name}
                                 required
-                                placeholder='Where or What did you bougth?'
+                                placeholder='Where did you make your purchase?'
                                 onChange={handleFormChange} />
                                 <Form.Label  className='mt-2'>Amount</Form.Label>
                                 <Form.Control type='number'
